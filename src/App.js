@@ -1,6 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
-import ExpensesList from "./components/ExpensesList";
+import ExpensesList from "./components/Expenses/ExpensesList";
+import NewExpense from "./components/AddExpense/NewExpense";
+
 
 function App() {
     const expenses = [{
@@ -23,10 +25,17 @@ function App() {
             date: new Date(2021, 5, 12),
         },
     ];
+
+    const onSaveExpenseDataHandler = (enteredData) => {
+        console.log(enteredData);
+    };
     return ( <
         div className = "App" >
         <
-        ExpensesList expenses = { expenses } > < /ExpensesList> < /
+        NewExpense onSaveExpenseData = { onSaveExpenseDataHandler }
+        />{" "}  <
+        ExpensesList expenses = { expenses }
+        />{" "} < /
         div >
     );
 }
