@@ -22,7 +22,7 @@ function ExpenseForm(props) {
         const untity = {
             title: enteredTitle,
             amount: enteredAmount,
-            date: Date(enteredDate),
+            date: new Date(enteredDate),
         };
         setEnteredTitle("");
         setEnteredAmount("");
@@ -40,8 +40,8 @@ function ExpenseForm(props) {
         input type = "text"
         value = { enteredTitle }
         onChange = { titleChangeHnadler }
-        />{" "} <
-        /div>{" "} <
+        />{" "} < /
+        div > { " " } <
         div className = "new-expense__control" >
         <
         label > Amout < /label>{" "} <
@@ -50,8 +50,8 @@ function ExpenseForm(props) {
         min = "0.01"
         step = "0.1"
         onChange = { amountChangeHnadler }
-        />{" "} <
-        /div>{" "} <
+        />{" "} < /
+        div > { " " } <
         div className = "new-expense__control" >
         <
         label > Date < /label>{" "} <
@@ -60,13 +60,13 @@ function ExpenseForm(props) {
         max = "2022-12-31"
         value = { enteredDate }
         onChange = { dateChangeHnadler }
-        />{" "} <
-        /div>{" "} <
+        />{" "} < /
+        div > { " " } <
         /div>{" "} <
         div className = "new-expense__actions" >
         <
-        button type = "submit" > Add Expense < /button>{" "} <
-        /div>{" "} <
+        button type = "submit" > Add Expense < /button>{" "} < /
+        div > { " " } <
         /form>
     );
 }
