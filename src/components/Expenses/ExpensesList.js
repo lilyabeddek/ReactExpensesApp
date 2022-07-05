@@ -1,41 +1,26 @@
-import React, { useState } from "react";
-import "./ExpensesList.css";
-import ExpenseItem from "./ExpenseItem";
-import ExpensesFilter from "./ExpensesFilter";
+import React from 'react';
 
-function ExpenseList(props) {
+import ExpenseItem from './ExpenseItem';
+import './ExpensesList.css';
 
-
-
-
-    let arr = [];
-    for (let i = 0; i < props.expenses.length; i++) {
-        arr.push( <
-            ExpenseItem key = { props.expenses[i].id }
-            title = { props.expenses[i].title }
-            amount = { props.expenses[i].amount }
-            date = { props.expenses[i].date } >
-            <
-            /ExpenseItem>
-        );
+const ExpensesList = (props) => {
+    if (props.items.length === 0) {
+        //console.log(props.items.length)
+        return <h2 className = 'expenses-list__fallback' > Found no expenses. < /h2>;
+    } else {
+        //console.log(props.items.length)
     }
-
-    const [yearFilter, setYearFilter] = useState("");
-    const saveYearFilterHandler = (year) => {
-        setYearFilter(year);
-        props.onFilterData(year);
-        console.log(year);
-    };
-
-
     return ( <
-        div className = "expenses" >
-        <
-        ExpensesFilter onSaveYearFilter = { saveYearFilterHandler }
-        />{" "} <
-        div > { arr } < /div>{" "} < /
-        div >
+        ul className = 'expenses-list' > {
+            props.items.map((expense) => ( <
+                ExpenseItem key = { expense.id }
+                title = { expense.title }
+                amount = { expense.amount }
+                date = { expense.date }
+                />
+            ))
+        } < /ul>
     );
-}
+};
 
-export default ExpenseList;
+export default ExpensesList;

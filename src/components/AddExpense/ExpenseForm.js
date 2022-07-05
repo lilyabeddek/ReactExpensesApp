@@ -29,6 +29,10 @@ function ExpenseForm(props) {
         setEnteredDate("");
         props.onSaveExpenseData(untity);
     };
+
+    const cancelActionHandler = (event) => {
+        props.oncancelForm();
+    }
     return ( <
         form onSubmit = { submitFormHnadler } >
         <
@@ -65,7 +69,11 @@ function ExpenseForm(props) {
         /div>{" "} <
         div className = "new-expense__actions" >
         <
-        button type = "submit" > Add Expense < /button>{" "} < /
+        button type = "submit" > Add Expense < /button> <
+        button onClick = { cancelActionHandler } > Cancel < /button>
+
+        <
+        /
         div > { " " } <
         /form>
     );

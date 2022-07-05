@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import React, { useState } from "react"
 import "./App.css";
-import ExpensesList from "./components/Expenses/ExpensesList";
+import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/AddExpense/NewExpense";
 
 
@@ -28,7 +28,6 @@ function App() {
     ];
 
     const [expensesList, expensesListHandler] = useState(expenses);
-    const [expensesFiltered, expensesFilteredHandler] = useState(expenses)
 
     const onSaveExpenseDataHandler = (enteredData) => {
         console.log(enteredData);
@@ -38,17 +37,13 @@ function App() {
         console.log(expensesList);
     };
 
-    const onFilterDataHandler = (year) => {
-        expensesFilteredHandler(expensesList.filter(expense => expense.date.getFullYear() == year))
 
-    }
     return ( <
         div className = "App" >
         <
         NewExpense onSaveExpenseData = { onSaveExpenseDataHandler }
         />{" "}  <
-        ExpensesList onFilterData = { onFilterDataHandler }
-        expenses = { expensesFiltered }
+        Expenses items = { expensesList }
         />{" "} < /
         div >
     );
