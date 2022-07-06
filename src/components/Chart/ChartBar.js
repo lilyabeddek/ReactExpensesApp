@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './ChartBar.css';
+import './css/ChartBar.css';
 
 function ChartBar(props) {
     let barFillHeight = '0%';
@@ -16,11 +16,13 @@ function ChartBar(props) {
         <
         div className = 'chart-bar__fill'
         style = {
-            { height: barFillHeight } } >
-        < /div> <
-        /div> <
-        div className = 'chart-bar__label' > { props.label } < /div> <
-        /div>
+            { height: barFillHeight }
+        } >
+        <
+        /div> < /
+        div > <
+        div className = 'chart-bar__label' > { props.label } < /div> < /
+        div >
     );
 };
 

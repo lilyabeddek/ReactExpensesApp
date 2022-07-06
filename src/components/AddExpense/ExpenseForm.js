@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ExpenseForm.css";
+import "./css/ExpenseForm.css";
 
 function ExpenseForm(props) {
     const [enteredTitle, setEnteredTitle] = useState("");
@@ -32,7 +32,7 @@ function ExpenseForm(props) {
 
     const cancelActionHandler = (event) => {
         props.oncancelForm();
-    }
+    };
     return ( <
         form onSubmit = { submitFormHnadler } >
         <
@@ -44,8 +44,8 @@ function ExpenseForm(props) {
         input type = "text"
         value = { enteredTitle }
         onChange = { titleChangeHnadler }
-        />{" "} < /
-        div > { " " } <
+        />{" "} <
+        /div>{" "} <
         div className = "new-expense__control" >
         <
         label > Amout < /label>{" "} <
@@ -54,8 +54,8 @@ function ExpenseForm(props) {
         min = "0.01"
         step = "0.1"
         onChange = { amountChangeHnadler }
-        />{" "} < /
-        div > { " " } <
+        />{" "} <
+        /div>{" "} <
         div className = "new-expense__control" >
         <
         label > Date < /label>{" "} <
@@ -64,17 +64,14 @@ function ExpenseForm(props) {
         max = "2022-12-31"
         value = { enteredDate }
         onChange = { dateChangeHnadler }
-        />{" "} < /
-        div > { " " } <
+        />{" "} <
+        /div>{" "} <
         /div>{" "} <
         div className = "new-expense__actions" >
         <
-        button type = "submit" > Add Expense < /button> <
-        button onClick = { cancelActionHandler } > Cancel < /button>
-
-        <
-        /
-        div > { " " } <
+        button type = "submit" > Add Expense < /button>{" "} <
+        button onClick = { cancelActionHandler } > Cancel < /button> <
+        /div>{" "} <
         /form>
     );
 }
