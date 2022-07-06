@@ -21,7 +21,7 @@ function ExpenseForm(props) {
         event.preventDefault();
         const untity = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate),
         };
         setEnteredTitle("");
